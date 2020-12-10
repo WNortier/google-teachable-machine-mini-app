@@ -11,8 +11,7 @@ document.addEventListener(
     const mugCount = document.querySelector('#mug-count');
     const feed = document.querySelector('#feed');
     const myVideo = document.querySelector('#video1');
-
-    mugCount.innerHTML = localStorage.getItem('mugs-eaten');
+    mugCount.innerHTML = localStorage.getItem('mugs-eaten') || 0;
     const URL = './my_model/';
 
     let model, webcam, labelContainer, maxPredictions;
@@ -44,12 +43,15 @@ document.addEventListener(
       // append elements to the DOM
       myVideo.style.display = 'block';
       feed.innerHTML = 'Grrrrrr!!! Feed me your mugs, human!';
-      document.getElementById('webcam-container').appendChild(webcam.canvas);
+      let mugsEaten = localStorage.getItem('mugs-eaten') || 0;
+
       labelContainer = document.getElementById('label-container');
+      document.getElementById('webcam-container').appendChild(webcam.canvas);
       for (let i = 0; i < maxPredictions; i++) {
         // and class labels
         labelContainer.appendChild(document.createElement('div'));
       }
+      labelContainer.innerHTML += `mugs-eaten: ${mugsEaten}`;
     }
 
     async function loop() {
