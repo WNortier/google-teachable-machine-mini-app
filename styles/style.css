@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+}
+
+body {
+  background-color: darkgray;
+  max-height: 90vh;
+}
+
+#app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem;
+  width: 90%;
+}
+
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#info-container {
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#info-container h5 {
+  line-height: 3;
+}
+
+h1,
+h5 {
+  margin: 1rem 3rem;
+}
+
+#mug-count {
+  color: red;
+}
+
+#webcam-container {
+  margin: 1rem;
+}
+
+button[type='button'] {
+  padding: 2rem;
+  height: 5rem;
+  width: 33%;
+  margin: 5rem;
+}
+
+#video {
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+}

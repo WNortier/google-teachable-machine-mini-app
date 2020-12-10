@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <title>The Mug Monster</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="app-container">
+        <h1>The Mug Monster</h1>
+        <h5>
+          He loves white or blue coffee mugs and has already eaten
+          <span id="mug-count"></span> in total!
+        </h5>
+        <video id="video1" style="display: none">
+          <source src="./mug-monster.mp4" type="video/mp4" />
+        </video>
+        <button type="button" id="btn">Start</button>
+        <h5 id="feed"></h5>
+        <div id="webcam-container"></div>
+        <div id="reply"></div>
+      </div>
+      <div id="info-container"><h5 id="label-container"></h5></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
+  </body>
+</html>
