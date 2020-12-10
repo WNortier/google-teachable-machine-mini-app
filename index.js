@@ -59,7 +59,7 @@ document.addEventListener(
       await predict();
       window.requestAnimationFrame(loop);
     }
-
+    let chance;
     // run the webcam image through the image model
     async function predict() {
       // predict can take in an image, video or canvas html element
@@ -74,21 +74,11 @@ document.addEventListener(
         feed.innerHTML = '';
         document.getElementById('webcam-container').innerHTML = '';
 
-        let chance = Math.ceil(Math.random(Math.max(3)));
-        switch (chance) {
-          case 1: {
-            reply.innerHTML = 'Thank you for that delicious mug!';
-          }
-          case 2: {
-            reply.innerHTML = 'Omnomnom!';
-          }
-          case 3: {
-            reply.innerHTML = 'Hmmmm, mugs are my favorite!';
-          }
-        }
+        chance = Math.ceil(Math.random() * 10);
+
         btn.style.display = 'none';
         label.style.display = 'none';
-
+        reply.innerHTML = 'Hmmmm, mugs are my favorite!';
         myVideo.play();
         setTimeout(async () => {
           if (localStorage['mugs-eaten'] === undefined) {
